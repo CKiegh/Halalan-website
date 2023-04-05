@@ -1,0 +1,76 @@
+{% extends 'Halalan2022/base.html' %}
+{% load static %}
+   
+{% block title %}
+    <title>Users</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="text-center">
+        <h1 class="display-3"> User Details </h1>
+        <hr>
+    </div>
+
+    <div class="text-center">
+
+        <table class="table table-hover" border="3">
+
+            <tr>
+                <td>
+                    <h4 class="display-7"> First Name </h4>
+                </td>
+                <td>
+                    <h4 class="display-7"> {{ user.first_name }}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 class="display-7"> Last Name </h4>
+                </td>
+                <td>
+                    <h4 class="display-7">{{ user.last_name }}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 class="display-7"> Username </h4>
+                </td>
+                <td>
+                    <h4 class="display-7"> {{ user.username }}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 class="display-7"> Password </h4>
+                </td>
+                <td>
+                    <h4 class="display-7">{{ user.password }}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 class="display-7"> Birthday </h4>
+                </td>
+                <td>
+                    <h4 class="display-7">{{ user.birthday }}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 class="display-7"> Sex </h4>
+                </td>
+                <td>
+                    <h4 class="display-7"> {{ user.sex }}</h4>
+                </td>
+            </tr>
+
+        </table>
+
+        <a href="{% url 'updateuserpage' %}">
+            <button class="btn btn-primary"> Update Info </button>
+        </a>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'Halalan2022/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Update User</title>
+{% endblock %}
+
+{% block content %}
+
+    <!-- for design: https://youtu.be/3ENJ_xd625s -->
+    <div class="text-center mt-4"> 
+
+        <form method="POST" action="{% url 'updateuserpage' %}" style="max-width: 500px; margin: auto;">{% csrf_token %}
+            <h3 class="text-primary">
+                Halalan2022
+                <small class="text-muted">Update User</small>
+            </h3>
+            <label for="first_name" class="sr-only">First Name:</label>
+            <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name">
+            <label for="last_name" class="sr-only">Second Name:</label>
+            <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name">
+            <label for="username" class="sr-only">Username:</label>
+            <input type="text" name="username" id="username" class="form-control" placeholder="Username">
+            <label for="password" class="sr-only">Password:</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password" minlength="8">
+            <label for="sex" class="sr-only">Sex (Male or Female): </label>
+            <input type="text" name="sex" id="sex" class="form-control" placeholder="Sex (Male or Female)">
+            <label for="birthday">Birthday</label>
+            <input type="date" name="birthday" id="birthday" class="form-control" placeholder="Birthday">
+            <br>
+            <input type="submit" class="btn btn-success">
+            <input type="reset" class="btn btn-secondary">
+            <h4 class="display-7 text-danger"> WARNING: Once edited, you will be redirected to the Login page! </h4>
+    
+        </form>
+
+    </div>  
+
+{% endblock %}
